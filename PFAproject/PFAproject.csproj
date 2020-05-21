@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +47,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="connection.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCAdminDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAdminDashboard.Designer.cs">
+      <DependentUpon>UCAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCommandsManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCommandsManagment.Designer.cs">
+      <DependentUpon>UCCommandsManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCProductManagInputs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCProductManagInputs.Designer.cs">
+      <DependentUpon>UCProductManagInputs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCProductsManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCProductsManagment.Designer.cs">
+      <DependentUpon>UCProductsManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCThemesManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThemesManagment.Designer.cs">
+      <DependentUpon>UCThemesManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCUserManagInputs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserManagInputs.Designer.cs">
+      <DependentUpon>UCUserManagInputs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCUsersManagment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUsersManagment.Designer.cs">
+      <DependentUpon>UCUsersManagment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +119,29 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCAdminDashboard.resx">
+      <DependentUpon>UCAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCommandsManagment.resx">
+      <DependentUpon>UCCommandsManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCProductManagInputs.resx">
+      <DependentUpon>UCProductManagInputs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCProductsManagment.resx">
+      <DependentUpon>UCProductsManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThemesManagment.resx">
+      <DependentUpon>UCThemesManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserManagInputs.resx">
+      <DependentUpon>UCUserManagInputs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUsersManagment.resx">
+      <DependentUpon>UCUsersManagment.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +154,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sideBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteLogo0.5x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\themes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\commands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\delete.png" />
+    <Content Include="Resources\logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
