@@ -40,6 +40,7 @@
             this.close = new System.Windows.Forms.Label();
             this.sideLogoPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.minimize = new System.Windows.Forms.Label();
             this.loginPagePanel.SuspendLayout();
             this.sideLogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,6 +48,7 @@
             // 
             // loginPagePanel
             // 
+            this.loginPagePanel.Controls.Add(this.minimize);
             this.loginPagePanel.Controls.Add(this.btnLogin);
             this.loginPagePanel.Controls.Add(this.label4);
             this.loginPagePanel.Controls.Add(this.txtPassword);
@@ -168,6 +170,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // minimize
+            // 
+            this.minimize.AutoSize = true;
+            this.minimize.Font = new System.Drawing.Font("Montserrat Light", 20.25F);
+            this.minimize.ForeColor = System.Drawing.Color.Black;
+            this.minimize.Location = new System.Drawing.Point(529, 9);
+            this.minimize.Name = "minimize";
+            this.minimize.Size = new System.Drawing.Size(31, 37);
+            this.minimize.TabIndex = 21;
+            this.minimize.Text = "_";
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -205,6 +219,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label close;
+        private System.Windows.Forms.Label minimize;
     }
 }
 

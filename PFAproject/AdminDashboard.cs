@@ -37,6 +37,9 @@ namespace PFAproject
 
             ucUsersManagment1.userAddInputs = ucUserManagInputs1;
             ucUsersManagment1.userEditInputs = ucUserManagEdit;
+
+            ucProductsManagment1.productAddInputs = ucProductManagInputs1;
+            ucProductsManagment1.productEditInputs = ucProductManagInputs2;
         }
 
         private void adminDashboard_Load(object sender, EventArgs e)
@@ -120,6 +123,11 @@ namespace PFAproject
         private void ucProductsManagment1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

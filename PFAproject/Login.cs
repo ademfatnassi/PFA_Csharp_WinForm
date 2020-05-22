@@ -123,5 +123,10 @@ namespace PFAproject
         {
          
         }
+
+        private void minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

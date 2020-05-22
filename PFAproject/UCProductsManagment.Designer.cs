@@ -90,6 +90,7 @@
             this.btnUpdateProduct.Size = new System.Drawing.Size(72, 44);
             this.btnUpdateProduct.TabIndex = 8;
             this.btnUpdateProduct.UseVisualStyleBackColor = false;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // btnDeleteProduct
             // 
@@ -118,6 +119,7 @@
             this.btnAddProduct.Size = new System.Drawing.Size(72, 44);
             this.btnAddProduct.TabIndex = 6;
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // UCProductsManagment
             // 
