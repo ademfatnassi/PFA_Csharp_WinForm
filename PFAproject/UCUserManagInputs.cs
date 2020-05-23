@@ -13,7 +13,7 @@ namespace PFAproject
     public partial class UCUserManagInputs : UserControl
     {
         Connection con = new Connection();
-        public String selectedUserID { get; set; }
+        public String selectedUserID { get; set; }// selected id column from selected row in datagridview
 
 
         String genderValue = "";
@@ -31,9 +31,9 @@ namespace PFAproject
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int citySelectedIndex = cbxCity.SelectedIndex+1;//starts from 0
-            int roleSelectedIndex = cbxRole.SelectedIndex+1;//starts from 0
-            int statusSelectedIndex = cbxStatus.SelectedIndex+1;//starts from 0
+            int citySelectedIndex = cbxCity.SelectedIndex + 1;//starts from 0
+            int roleSelectedIndex = cbxRole.SelectedIndex + 1;//starts from 0
+            int statusSelectedIndex = cbxStatus.SelectedIndex + 1;//starts from 0
 
             if (btnSubmit.Text.Equals("Add"))
             {
@@ -41,7 +41,7 @@ namespace PFAproject
                 {
 
                     String SQL = $"INSERT INTO `user`(`idUser`, `Nom`, `Prenom`, `Phone`, `BirthDate`, `Adresse`, `ZIP`, `Email`, `Password`, `Gender`, `idCity`, `Role`, `uStatus`, `inscritDate`) VALUES (NULL,'{txtLastName.Text}','{txtFirstName.Text}','{txtPhone.Text}','{birthDatePicker.Text}','{txtAddresse.Text}','{txtZip.Text}','{txtEmail.Text}','{txtPassword.Text}','{genderValue}','{citySelectedIndex.ToString()}','{roleSelectedIndex.ToString()}','{statusSelectedIndex.ToString()}','{DateTime.Now.ToString("yyyy-MM-dd")}')";
-                    MessageBox.Show(SQL, "Gender not Selected", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show(SQL, "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     con.ExecuteNonQuery(SQL);
                     restInputs();
                 }
@@ -88,9 +88,9 @@ namespace PFAproject
             cbxRole.SelectedIndex = -1;
             cbxStatus.SelectedIndex = -1;
             if (genderValue.Equals("M"))
-                { male.Checked = false; }
+            { male.Checked = false; }
             else if (genderValue.Equals("F"))
-                { female.Checked = false; }
+            { female.Checked = false; }
         }
         void fillComboboxCity()
         {

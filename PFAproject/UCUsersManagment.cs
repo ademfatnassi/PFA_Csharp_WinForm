@@ -42,42 +42,6 @@ namespace PFAproject
             usersList.DataSource = dataTable;
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BirthDatePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CityLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CbxCity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StatusLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtZip_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void BtnRefreshUsers_Click(object sender, EventArgs e)
         {
             displayUsers();

@@ -48,6 +48,9 @@
             this.cbxTheme = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.noteLabel = new System.Windows.Forms.Label();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.idProduct = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ImageSRCLabel
@@ -63,10 +66,12 @@
             // 
             // txtImgSRC
             // 
+            this.txtImgSRC.Font = new System.Drawing.Font("Montserrat Medium", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtImgSRC.Location = new System.Drawing.Point(177, 90);
             this.txtImgSRC.Name = "txtImgSRC";
-            this.txtImgSRC.Size = new System.Drawing.Size(200, 21);
+            this.txtImgSRC.Size = new System.Drawing.Size(200, 19);
             this.txtImgSRC.TabIndex = 1;
+            this.txtImgSRC.Text = "assets\\Images\\product\\";
             // 
             // txtName
             // 
@@ -232,6 +237,7 @@
             this.btnReset.TabIndex = 63;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSubmit
             // 
@@ -246,11 +252,45 @@
             this.btnSubmit.TabIndex = 62;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // noteLabel
+            // 
+            this.noteLabel.AutoSize = true;
+            this.noteLabel.ForeColor = System.Drawing.Color.Red;
+            this.noteLabel.Location = new System.Drawing.Point(51, 495);
+            this.noteLabel.Name = "noteLabel";
+            this.noteLabel.Size = new System.Drawing.Size(478, 15);
+            this.noteLabel.TabIndex = 64;
+            this.noteLabel.Text = "Note: Copy the image at C:\\xampp\\htdocs\\PFA\\assets\\Images\\product\\";
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.idLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(144)))), ((int)(((byte)(132)))));
+            this.idLabel.Location = new System.Drawing.Point(50, 40);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(0, 22);
+            this.idLabel.TabIndex = 65;
+            // 
+            // idProduct
+            // 
+            this.idProduct.AutoSize = true;
+            this.idProduct.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.idProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(144)))), ((int)(((byte)(132)))));
+            this.idProduct.Location = new System.Drawing.Point(98, 40);
+            this.idProduct.Name = "idProduct";
+            this.idProduct.Size = new System.Drawing.Size(0, 22);
+            this.idProduct.TabIndex = 66;
             // 
             // UCProductManagInputs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.idProduct);
+            this.Controls.Add(this.idLabel);
+            this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cbxTheme);
@@ -277,6 +317,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 550);
             this.Name = "UCProductManagInputs";
             this.Size = new System.Drawing.Size(900, 550);
+            this.Load += new System.EventHandler(this.UCProductManagInputs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,24 +326,27 @@
         #endregion
 
         private System.Windows.Forms.Label ImageSRCLabel;
-        private System.Windows.Forms.TextBox txtImgSRC;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Label manufDateLabel;
-        private System.Windows.Forms.DateTimePicker ManuDatePicker;
-        private System.Windows.Forms.DateTimePicker ExepDatePicker;
         private System.Windows.Forms.Label exepDateLabel;
-        private System.Windows.Forms.TextBox txtProvider;
         private System.Windows.Forms.Label providerLabel;
-        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label stockLabel;
         private System.Windows.Forms.Label themeLabel;
-        private System.Windows.Forms.ComboBox cbxTheme;
         private System.Windows.Forms.Button btnReset;
         public System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label noteLabel;
+        public System.Windows.Forms.TextBox txtImgSRC;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.TextBox txtDescription;
+        public System.Windows.Forms.DateTimePicker ManuDatePicker;
+        public System.Windows.Forms.DateTimePicker ExepDatePicker;
+        public System.Windows.Forms.TextBox txtProvider;
+        public System.Windows.Forms.TextBox txtStock;
+        public System.Windows.Forms.ComboBox cbxTheme;
+        public System.Windows.Forms.Label idLabel;
+        public System.Windows.Forms.Label idProduct;
     }
 }

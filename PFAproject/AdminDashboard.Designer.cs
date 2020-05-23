@@ -38,9 +38,9 @@
             this.usersBtnManagment = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.rightSidePanel = new System.Windows.Forms.Panel();
-            this.close = new System.Windows.Forms.Label();
+            this.ucProductManagInputs2 = new PFAproject.UCProductManagInputs();
             this.minimize = new System.Windows.Forms.Label();
-            this.ucProductManagInputs1 = new PFAproject.UCProductManagInputs();
+            this.close = new System.Windows.Forms.Label();
             this.ucAdminDashboard1 = new PFAproject.UCAdminDashboard();
             this.ucThemesManagment1 = new PFAproject.UCThemesManagment();
             this.ucProductsManagment1 = new PFAproject.UCProductsManagment();
@@ -48,7 +48,7 @@
             this.ucUsersManagment1 = new PFAproject.UCUsersManagment();
             this.ucUserManagInputs1 = new PFAproject.UCUserManagInputs();
             this.ucUserManagEdit = new PFAproject.UCUserManagInputs();
-            this.ucProductManagInputs2 = new PFAproject.UCProductManagInputs();
+            this.ucProductManagInputs1 = new PFAproject.UCProductManagInputs();
             this.sideNavPanel.SuspendLayout();
             this.rightSidePanel.SuspendLayout();
             this.SuspendLayout();
@@ -184,18 +184,16 @@
             this.rightSidePanel.TabIndex = 1;
             this.rightSidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
-            // close
+            // ucProductManagInputs2
             // 
-            this.close.AutoSize = true;
-            this.close.BackColor = System.Drawing.Color.Transparent;
-            this.close.Font = new System.Drawing.Font("Montserrat Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.close.ForeColor = System.Drawing.Color.Black;
-            this.close.Location = new System.Drawing.Point(853, 3);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(34, 37);
-            this.close.TabIndex = 10;
-            this.close.Text = "X";
-            this.close.Click += new System.EventHandler(this.close_Click);
+            this.ucProductManagInputs2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucProductManagInputs2.Location = new System.Drawing.Point(-1, 50);
+            this.ucProductManagInputs2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ucProductManagInputs2.MaximumSize = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs2.MinimumSize = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs2.Name = "ucProductManagInputs2";
+            this.ucProductManagInputs2.Size = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs2.TabIndex = 21;
             // 
             // minimize
             // 
@@ -209,16 +207,18 @@
             this.minimize.Text = "_";
             this.minimize.Click += new System.EventHandler(this.minimize_Click);
             // 
-            // ucProductManagInputs1
+            // close
             // 
-            this.ucProductManagInputs1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucProductManagInputs1.Location = new System.Drawing.Point(-1, 48);
-            this.ucProductManagInputs1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ucProductManagInputs1.MaximumSize = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs1.MinimumSize = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs1.Name = "ucProductManagInputs1";
-            this.ucProductManagInputs1.Size = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs1.TabIndex = 19;
+            this.close.AutoSize = true;
+            this.close.BackColor = System.Drawing.Color.Transparent;
+            this.close.Font = new System.Drawing.Font("Montserrat Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.ForeColor = System.Drawing.Color.Black;
+            this.close.Location = new System.Drawing.Point(853, 3);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(34, 37);
+            this.close.TabIndex = 10;
+            this.close.Text = "X";
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // ucAdminDashboard1
             // 
@@ -255,6 +255,7 @@
             this.ucProductsManagment1.Margin = new System.Windows.Forms.Padding(2);
             this.ucProductsManagment1.Name = "ucProductsManagment1";
             this.ucProductsManagment1.productAddInputs = null;
+            this.ucProductsManagment1.productEditInputs = null;
             this.ucProductsManagment1.Size = new System.Drawing.Size(900, 550);
             this.ucProductsManagment1.TabIndex = 16;
             // 
@@ -311,16 +312,16 @@
             this.ucUserManagEdit.Size = new System.Drawing.Size(900, 550);
             this.ucUserManagEdit.TabIndex = 18;
             // 
-            // ucProductManagInputs2
+            // ucProductManagInputs1
             // 
-            this.ucProductManagInputs2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucProductManagInputs2.Location = new System.Drawing.Point(-1, 50);
-            this.ucProductManagInputs2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ucProductManagInputs2.MaximumSize = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs2.MinimumSize = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs2.Name = "ucProductManagInputs2";
-            this.ucProductManagInputs2.Size = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs2.TabIndex = 21;
+            this.ucProductManagInputs1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucProductManagInputs1.Location = new System.Drawing.Point(-1, 48);
+            this.ucProductManagInputs1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ucProductManagInputs1.MaximumSize = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs1.MinimumSize = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs1.Name = "ucProductManagInputs1";
+            this.ucProductManagInputs1.Size = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs1.TabIndex = 19;
             // 
             // AdminDashboard
             // 

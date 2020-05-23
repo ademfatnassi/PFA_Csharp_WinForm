@@ -60,8 +60,10 @@
             this.productList.Margin = new System.Windows.Forms.Padding(1);
             this.productList.Name = "productList";
             this.productList.ReadOnly = true;
+            this.productList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.productList.Size = new System.Drawing.Size(730, 300);
             this.productList.TabIndex = 1;
+            this.productList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productList_CellContentClick);
             // 
             // btnRefreshProducts
             // 
@@ -76,6 +78,7 @@
             this.btnRefreshProducts.Size = new System.Drawing.Size(72, 44);
             this.btnRefreshProducts.TabIndex = 9;
             this.btnRefreshProducts.UseVisualStyleBackColor = false;
+            this.btnRefreshProducts.Click += new System.EventHandler(this.btnRefreshProducts_Click);
             // 
             // btnUpdateProduct
             // 
@@ -105,6 +108,7 @@
             this.btnDeleteProduct.Size = new System.Drawing.Size(72, 44);
             this.btnDeleteProduct.TabIndex = 7;
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -138,6 +142,7 @@
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "UCProductsManagment";
             this.Size = new System.Drawing.Size(900, 550);
+            this.Load += new System.EventHandler(this.UCProductsManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
