@@ -38,7 +38,7 @@
             this.usersBtnManagment = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.rightSidePanel = new System.Windows.Forms.Panel();
-            this.ucProductManagInputs2 = new PFAproject.UCProductManagInputs();
+            this.ucThemesManagmentInputs1 = new PFAproject.UCThemesManagmentInputs();
             this.minimize = new System.Windows.Forms.Label();
             this.close = new System.Windows.Forms.Label();
             this.ucAdminDashboard1 = new PFAproject.UCAdminDashboard();
@@ -49,6 +49,8 @@
             this.ucUserManagInputs1 = new PFAproject.UCUserManagInputs();
             this.ucUserManagEdit = new PFAproject.UCUserManagInputs();
             this.ucProductManagInputs1 = new PFAproject.UCProductManagInputs();
+            this.ucProductManagInputs2 = new PFAproject.UCProductManagInputs();
+            this.ucThemesManagmentInputs2 = new PFAproject.UCThemesManagmentInputs();
             this.sideNavPanel.SuspendLayout();
             this.rightSidePanel.SuspendLayout();
             this.SuspendLayout();
@@ -165,7 +167,7 @@
             // 
             this.rightSidePanel.BackColor = System.Drawing.Color.White;
             this.rightSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rightSidePanel.Controls.Add(this.ucProductManagInputs2);
+            this.rightSidePanel.Controls.Add(this.ucThemesManagmentInputs2);
             this.rightSidePanel.Controls.Add(this.minimize);
             this.rightSidePanel.Controls.Add(this.close);
             this.rightSidePanel.Controls.Add(this.ucAdminDashboard1);
@@ -176,6 +178,8 @@
             this.rightSidePanel.Controls.Add(this.ucUserManagInputs1);
             this.rightSidePanel.Controls.Add(this.ucUserManagEdit);
             this.rightSidePanel.Controls.Add(this.ucProductManagInputs1);
+            this.rightSidePanel.Controls.Add(this.ucProductManagInputs2);
+            this.rightSidePanel.Controls.Add(this.ucThemesManagmentInputs1);
             this.rightSidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightSidePanel.ForeColor = System.Drawing.Color.Transparent;
             this.rightSidePanel.Location = new System.Drawing.Point(100, 0);
@@ -184,16 +188,16 @@
             this.rightSidePanel.TabIndex = 1;
             this.rightSidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
-            // ucProductManagInputs2
+            // ucThemesManagmentInputs1
             // 
-            this.ucProductManagInputs2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucProductManagInputs2.Location = new System.Drawing.Point(-1, 50);
-            this.ucProductManagInputs2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ucProductManagInputs2.MaximumSize = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs2.MinimumSize = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs2.Name = "ucProductManagInputs2";
-            this.ucProductManagInputs2.Size = new System.Drawing.Size(900, 550);
-            this.ucProductManagInputs2.TabIndex = 21;
+            this.ucThemesManagmentInputs1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.ucThemesManagmentInputs1.Location = new System.Drawing.Point(-1, 50);
+            this.ucThemesManagmentInputs1.Margin = new System.Windows.Forms.Padding(1);
+            this.ucThemesManagmentInputs1.MaximumSize = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs1.MinimumSize = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs1.Name = "ucThemesManagmentInputs1";
+            this.ucThemesManagmentInputs1.Size = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs1.TabIndex = 22;
             // 
             // minimize
             // 
@@ -241,6 +245,8 @@
             this.ucThemesManagment1.Name = "ucThemesManagment1";
             this.ucThemesManagment1.Size = new System.Drawing.Size(900, 550);
             this.ucThemesManagment1.TabIndex = 13;
+            this.ucThemesManagment1.themeAddInputs = null;
+            this.ucThemesManagment1.themeEditInputs = null;
             // 
             // ucProductsManagment1
             // 
@@ -264,6 +270,7 @@
             this.ucCommandsManagment1.AutoSize = true;
             this.ucCommandsManagment1.BackColor = System.Drawing.Color.White;
             this.ucCommandsManagment1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.ucCommandsManagment1.ForeColor = System.Drawing.Color.Black;
             this.ucCommandsManagment1.Location = new System.Drawing.Point(0, 50);
             this.ucCommandsManagment1.Margin = new System.Windows.Forms.Padding(2);
             this.ucCommandsManagment1.MaximumSize = new System.Drawing.Size(900, 550);
@@ -323,6 +330,28 @@
             this.ucProductManagInputs1.Size = new System.Drawing.Size(900, 550);
             this.ucProductManagInputs1.TabIndex = 19;
             // 
+            // ucProductManagInputs2
+            // 
+            this.ucProductManagInputs2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucProductManagInputs2.Location = new System.Drawing.Point(-1, 50);
+            this.ucProductManagInputs2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ucProductManagInputs2.MaximumSize = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs2.MinimumSize = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs2.Name = "ucProductManagInputs2";
+            this.ucProductManagInputs2.Size = new System.Drawing.Size(900, 550);
+            this.ucProductManagInputs2.TabIndex = 21;
+            // 
+            // ucThemesManagmentInputs2
+            // 
+            this.ucThemesManagmentInputs2.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.ucThemesManagmentInputs2.Location = new System.Drawing.Point(-3, 50);
+            this.ucThemesManagmentInputs2.Margin = new System.Windows.Forms.Padding(1);
+            this.ucThemesManagmentInputs2.MaximumSize = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs2.MinimumSize = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs2.Name = "ucThemesManagmentInputs2";
+            this.ucThemesManagmentInputs2.Size = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs2.TabIndex = 23;
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -367,5 +396,7 @@
         public UCProductManagInputs ucProductManagInputs1;
         private System.Windows.Forms.Label minimize;
         private UCProductManagInputs ucProductManagInputs2;
+        private UCThemesManagmentInputs ucThemesManagmentInputs1;
+        private UCThemesManagmentInputs ucThemesManagmentInputs2;
     }
 }

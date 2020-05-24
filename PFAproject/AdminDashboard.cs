@@ -40,6 +40,9 @@ namespace PFAproject
 
             ucProductsManagment1.productAddInputs = ucProductManagInputs1;
             ucProductsManagment1.productEditInputs = ucProductManagInputs2;
+
+            ucThemesManagment1.themeAddInputs = ucThemesManagmentInputs1;
+            ucThemesManagment1.themeEditInputs = ucThemesManagmentInputs2;
         }
 
         private void adminDashboard_Load(object sender, EventArgs e)

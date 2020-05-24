@@ -51,6 +51,7 @@ namespace PFAproject
         {
             userEditInputs.btnSubmit.Text = "Edit";
             userEditInputs?.BringToFront();
+
             userEditInputs.IdLabel.Text = "ID: ";
             userEditInputs.IdUser.Text = usersList.CurrentRow.Cells[0].Value.ToString();
             userEditInputs.txtLastName.Text =  usersList.CurrentRow.Cells[1].Value.ToString();

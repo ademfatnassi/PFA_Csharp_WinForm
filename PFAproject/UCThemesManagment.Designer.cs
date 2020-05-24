@@ -52,12 +52,16 @@
             // 
             this.themeList.AllowUserToAddRows = false;
             this.themeList.AllowUserToDeleteRows = false;
+            this.themeList.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.themeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.themeList.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.themeList.Location = new System.Drawing.Point(87, 177);
             this.themeList.Name = "themeList";
             this.themeList.ReadOnly = true;
+            this.themeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.themeList.Size = new System.Drawing.Size(730, 300);
             this.themeList.TabIndex = 1;
+            this.themeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.themeList_CellContentClick);
             // 
             // btnRefreshThemes
             // 
@@ -72,6 +76,7 @@
             this.btnRefreshThemes.Size = new System.Drawing.Size(72, 44);
             this.btnRefreshThemes.TabIndex = 13;
             this.btnRefreshThemes.UseVisualStyleBackColor = false;
+            this.btnRefreshThemes.Click += new System.EventHandler(this.btnRefreshThemes_Click);
             // 
             // btnUpdateTheme
             // 
@@ -86,6 +91,7 @@
             this.btnUpdateTheme.Size = new System.Drawing.Size(72, 44);
             this.btnUpdateTheme.TabIndex = 12;
             this.btnUpdateTheme.UseVisualStyleBackColor = false;
+            this.btnUpdateTheme.Click += new System.EventHandler(this.btnUpdateTheme_Click);
             // 
             // btnDeleteTheme
             // 
@@ -114,6 +120,7 @@
             this.btnAddTheme.Size = new System.Drawing.Size(72, 44);
             this.btnAddTheme.TabIndex = 10;
             this.btnAddTheme.UseVisualStyleBackColor = false;
+            this.btnAddTheme.Click += new System.EventHandler(this.btnAddTheme_Click);
             // 
             // UCThemesManagment
             // 
@@ -127,9 +134,11 @@
             this.Controls.Add(this.themeList);
             this.Controls.Add(this.themeMangTitle);
             this.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "UCThemesManagment";
             this.Size = new System.Drawing.Size(900, 550);
+            this.Load += new System.EventHandler(this.UCThemesManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.themeList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.commandMangTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.commandList = new System.Windows.Forms.DataGridView();
             this.btnRefreshCommands = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commandList)).BeginInit();
             this.SuspendLayout();
             // 
             // commandMangTitle
@@ -45,16 +45,19 @@
             this.commandMangTitle.TabIndex = 0;
             this.commandMangTitle.Text = "Command Managment";
             // 
-            // dataGridView1
+            // commandList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 167);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 312);
-            this.dataGridView1.TabIndex = 1;
+            this.commandList.AllowUserToAddRows = false;
+            this.commandList.AllowUserToDeleteRows = false;
+            this.commandList.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.commandList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.commandList.GridColor = System.Drawing.SystemColors.AppWorkspace;
+            this.commandList.Location = new System.Drawing.Point(48, 167);
+            this.commandList.Name = "commandList";
+            this.commandList.ReadOnly = true;
+            this.commandList.Size = new System.Drawing.Size(805, 312);
+            this.commandList.TabIndex = 1;
+            this.commandList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commandList_CellContentClick);
             // 
             // btnRefreshCommands
             // 
@@ -69,6 +72,7 @@
             this.btnRefreshCommands.Size = new System.Drawing.Size(72, 44);
             this.btnRefreshCommands.TabIndex = 6;
             this.btnRefreshCommands.UseVisualStyleBackColor = false;
+            this.btnRefreshCommands.Click += new System.EventHandler(this.btnRefreshCommands_Click);
             // 
             // UCCommandsManagment
             // 
@@ -77,15 +81,17 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnRefreshCommands);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.commandList);
             this.Controls.Add(this.commandMangTitle);
             this.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximumSize = new System.Drawing.Size(900, 550);
             this.MinimumSize = new System.Drawing.Size(900, 550);
             this.Name = "UCCommandsManagment";
             this.Size = new System.Drawing.Size(900, 550);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UCCommandsManagment_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.commandList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +100,7 @@
         #endregion
 
         private System.Windows.Forms.Label commandMangTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView commandList;
         public System.Windows.Forms.Button btnRefreshCommands;
     }
 }

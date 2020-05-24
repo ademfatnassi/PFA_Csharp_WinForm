@@ -93,6 +93,12 @@
     <Compile Include="UCThemesManagment.Designer.cs">
       <DependentUpon>UCThemesManagment.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCThemesManagmentInputs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThemesManagmentInputs.Designer.cs">
+      <DependentUpon>UCThemesManagmentInputs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCUserManagInputs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCThemesManagment.resx">
       <DependentUpon>UCThemesManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThemesManagmentInputs.resx">
+      <DependentUpon>UCThemesManagmentInputs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUserManagInputs.resx">
       <DependentUpon>UCUserManagInputs.cs</DependentUpon>
