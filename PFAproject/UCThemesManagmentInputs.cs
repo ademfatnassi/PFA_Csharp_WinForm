@@ -32,15 +32,24 @@ namespace PFAproject
             if (btnSubmit.Text.Equals("Add"))
             {
 
-                MySqlDataReader row;
-                String SQL = $"INSERT INTO `themes`VALUES (NULL,'{txtThemeName.Text}')";
-                con.Open();
-                row = con.ExecuteReader(SQL);
-                while (row.Read())
+                bool error = false;
+                if (string.IsNullOrEmpty(txtThemeName.Text.Trim()))
                 {
+                    error = true;
+                    MessageBox.Show("Verify theme name", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtThemeName.Focus();
                 }
-                con.Close();
-
+                if (!error)
+                {
+                    MySqlDataReader row;
+                    String SQL = $"INSERT INTO `themes`VALUES (NULL,'{txtThemeName.Text}')";
+                    con.Open();
+                    row = con.ExecuteReader(SQL);
+                    while (row.Read())
+                    {
+                    }
+                    con.Close();
+                }
 
                 //MessageBox.Show(SQL, "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 //con.ExecuteNonQuery(SQL);

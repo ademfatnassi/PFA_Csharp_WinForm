@@ -38,7 +38,6 @@
             this.usersBtnManagment = new System.Windows.Forms.Button();
             this.homeBtn = new System.Windows.Forms.Button();
             this.rightSidePanel = new System.Windows.Forms.Panel();
-            this.ucThemesManagmentInputs1 = new PFAproject.UCThemesManagmentInputs();
             this.minimize = new System.Windows.Forms.Label();
             this.close = new System.Windows.Forms.Label();
             this.ucAdminDashboard1 = new PFAproject.UCAdminDashboard();
@@ -50,6 +49,7 @@
             this.ucUserManagEdit = new PFAproject.UCUserManagInputs();
             this.ucProductManagInputs1 = new PFAproject.UCProductManagInputs();
             this.ucProductManagInputs2 = new PFAproject.UCProductManagInputs();
+            this.ucThemesManagmentInputs1 = new PFAproject.UCThemesManagmentInputs();
             this.ucThemesManagmentInputs2 = new PFAproject.UCThemesManagmentInputs();
             this.sideNavPanel.SuspendLayout();
             this.rightSidePanel.SuspendLayout();
@@ -92,6 +92,7 @@
             this.logOutBtn.Size = new System.Drawing.Size(72, 44);
             this.logOutBtn.TabIndex = 5;
             this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.Click += new System.EventHandler(this.logOutBtn_Click);
             // 
             // commandBtnManagment
             // 
@@ -167,7 +168,6 @@
             // 
             this.rightSidePanel.BackColor = System.Drawing.Color.White;
             this.rightSidePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rightSidePanel.Controls.Add(this.ucThemesManagmentInputs2);
             this.rightSidePanel.Controls.Add(this.minimize);
             this.rightSidePanel.Controls.Add(this.close);
             this.rightSidePanel.Controls.Add(this.ucAdminDashboard1);
@@ -180,6 +180,7 @@
             this.rightSidePanel.Controls.Add(this.ucProductManagInputs1);
             this.rightSidePanel.Controls.Add(this.ucProductManagInputs2);
             this.rightSidePanel.Controls.Add(this.ucThemesManagmentInputs1);
+            this.rightSidePanel.Controls.Add(this.ucThemesManagmentInputs2);
             this.rightSidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightSidePanel.ForeColor = System.Drawing.Color.Transparent;
             this.rightSidePanel.Location = new System.Drawing.Point(100, 0);
@@ -187,17 +188,6 @@
             this.rightSidePanel.Size = new System.Drawing.Size(900, 600);
             this.rightSidePanel.TabIndex = 1;
             this.rightSidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
-            // 
-            // ucThemesManagmentInputs1
-            // 
-            this.ucThemesManagmentInputs1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
-            this.ucThemesManagmentInputs1.Location = new System.Drawing.Point(-1, 50);
-            this.ucThemesManagmentInputs1.Margin = new System.Windows.Forms.Padding(1);
-            this.ucThemesManagmentInputs1.MaximumSize = new System.Drawing.Size(900, 550);
-            this.ucThemesManagmentInputs1.MinimumSize = new System.Drawing.Size(900, 550);
-            this.ucThemesManagmentInputs1.Name = "ucThemesManagmentInputs1";
-            this.ucThemesManagmentInputs1.Size = new System.Drawing.Size(900, 550);
-            this.ucThemesManagmentInputs1.TabIndex = 22;
             // 
             // minimize
             // 
@@ -227,7 +217,7 @@
             // ucAdminDashboard1
             // 
             this.ucAdminDashboard1.AutoSize = true;
-            this.ucAdminDashboard1.Location = new System.Drawing.Point(0, 47);
+            this.ucAdminDashboard1.Location = new System.Drawing.Point(-1, 50);
             this.ucAdminDashboard1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ucAdminDashboard1.MaximumSize = new System.Drawing.Size(900, 550);
             this.ucAdminDashboard1.MinimumSize = new System.Drawing.Size(900, 550);
@@ -240,6 +230,7 @@
             // 
             this.ucThemesManagment1.AutoSize = true;
             this.ucThemesManagment1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucThemesManagment1.ForeColor = System.Drawing.Color.Black;
             this.ucThemesManagment1.Location = new System.Drawing.Point(0, 48);
             this.ucThemesManagment1.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
             this.ucThemesManagment1.Name = "ucThemesManagment1";
@@ -340,6 +331,17 @@
             this.ucProductManagInputs2.Name = "ucProductManagInputs2";
             this.ucProductManagInputs2.Size = new System.Drawing.Size(900, 550);
             this.ucProductManagInputs2.TabIndex = 21;
+            // 
+            // ucThemesManagmentInputs1
+            // 
+            this.ucThemesManagmentInputs1.Font = new System.Drawing.Font("Montserrat Medium", 8.249999F, System.Drawing.FontStyle.Bold);
+            this.ucThemesManagmentInputs1.Location = new System.Drawing.Point(-1, 50);
+            this.ucThemesManagmentInputs1.Margin = new System.Windows.Forms.Padding(1);
+            this.ucThemesManagmentInputs1.MaximumSize = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs1.MinimumSize = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs1.Name = "ucThemesManagmentInputs1";
+            this.ucThemesManagmentInputs1.Size = new System.Drawing.Size(900, 550);
+            this.ucThemesManagmentInputs1.TabIndex = 22;
             // 
             // ucThemesManagmentInputs2
             // 

@@ -132,5 +132,12 @@ namespace PFAproject
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+        }
     }
 }

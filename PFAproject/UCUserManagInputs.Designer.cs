@@ -163,7 +163,7 @@
             this.birthDatePicker.Margin = new System.Windows.Forms.Padding(1);
             this.birthDatePicker.Name = "birthDatePicker";
             this.birthDatePicker.Size = new System.Drawing.Size(200, 21);
-            this.birthDatePicker.TabIndex = 54;
+            this.birthDatePicker.TabIndex = 3;
             // 
             // roleLabel
             // 
@@ -211,7 +211,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '⬤';
             this.txtPassword.Size = new System.Drawing.Size(200, 19);
-            this.txtPassword.TabIndex = 50;
+            this.txtPassword.TabIndex = 5;
             // 
             // addresseLabel
             // 
@@ -233,7 +233,7 @@
             this.txtAddresse.Margin = new System.Windows.Forms.Padding(1);
             this.txtAddresse.Name = "txtAddresse";
             this.txtAddresse.Size = new System.Drawing.Size(200, 19);
-            this.txtAddresse.TabIndex = 48;
+            this.txtAddresse.TabIndex = 6;
             // 
             // zipLabel
             // 
@@ -255,7 +255,7 @@
             this.txtZip.Margin = new System.Windows.Forms.Padding(1);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(200, 19);
-            this.txtZip.TabIndex = 46;
+            this.txtZip.TabIndex = 8;
             // 
             // phoneLabel
             // 
@@ -277,7 +277,7 @@
             this.txtPhone.Margin = new System.Windows.Forms.Padding(1);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(200, 19);
-            this.txtPhone.TabIndex = 44;
+            this.txtPhone.TabIndex = 7;
             // 
             // cityLabel
             // 
@@ -311,7 +311,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(1);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 19);
-            this.txtEmail.TabIndex = 41;
+            this.txtEmail.TabIndex = 4;
             // 
             // birthDateLabel
             // 
@@ -345,7 +345,7 @@
             this.txtLastName.Margin = new System.Windows.Forms.Padding(1);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(200, 19);
-            this.txtLastName.TabIndex = 38;
+            this.txtLastName.TabIndex = 2;
             // 
             // firstNameLabel
             // 
@@ -367,7 +367,7 @@
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(1);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(200, 19);
-            this.txtFirstName.TabIndex = 36;
+            this.txtFirstName.TabIndex = 1;
             // 
             // IdUser
             // 

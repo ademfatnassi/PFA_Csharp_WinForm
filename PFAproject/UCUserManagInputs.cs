@@ -35,22 +35,98 @@ namespace PFAproject
             int roleSelectedIndex = cbxRole.SelectedIndex + 1;//starts from 0
             int statusSelectedIndex = cbxStatus.SelectedIndex + 1;//starts from 0
 
+            bool error = false;
+
+
+            if (string.IsNullOrEmpty(txtFirstName.Text.Trim()))
+            {
+                error = true;
+                MessageBox.Show("Verify User first name", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtFirstName.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtLastName.Text.Trim()))
+            {
+                error = true;
+                MessageBox.Show("Verify User last name", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLastName.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtEmail.Text.Trim()))
+            {
+                error = true;
+                MessageBox.Show("Verify User Email", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtEmail.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtPassword.Text.Trim()))
+            {
+                error = true;
+                MessageBox.Show("Verify User Password", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPassword.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtPhone.Text.Trim()))
+            {
+                error = true;
+                MessageBox.Show("Verify User Phone", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPhone.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtAddresse.Text.Trim()))
+            {
+                error = true;
+                MessageBox.Show("Verify User Addresse", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAddresse.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtZip.Text.Trim()) || !int.TryParse(txtZip.Text, out int zipValue) || zipValue < 0)
+            {
+                error = true;
+                MessageBox.Show("Verify User zip code", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtZip.Focus();
+            }
+            else if (cbxCity.SelectedIndex == -1)
+            {
+                error = true;
+                MessageBox.Show("Verify User IcCity", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbxCity.Focus();
+            }
+            else if (cbxRole.SelectedIndex == -1)
+            {
+                error = true;
+                MessageBox.Show("Verify User Role", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbxRole.Focus();
+            }
+            else if (cbxStatus.SelectedIndex == -1)
+            {
+                error = true;
+                MessageBox.Show("Verify User Role", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cbxStatus.Focus();
+            } else if (String.IsNullOrEmpty(genderValue))
+            {
+                MessageBox.Show("Not selected", "Gender not Selected", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
             if (btnSubmit.Text.Equals("Add"))
             {
-                if (!String.IsNullOrEmpty(genderValue))
-                {
-
-                    String SQL = $"INSERT INTO `user`(`idUser`, `Nom`, `Prenom`, `Phone`, `BirthDate`, `Adresse`, `ZIP`, `Email`, `Password`, `Gender`, `idCity`, `Role`, `uStatus`, `inscritDate`) VALUES (NULL,'{txtLastName.Text}','{txtFirstName.Text}','{txtPhone.Text}','{birthDatePicker.Text}','{txtAddresse.Text}','{txtZip.Text}','{txtEmail.Text}','{txtPassword.Text}','{genderValue}','{citySelectedIndex.ToString()}','{roleSelectedIndex.ToString()}','{statusSelectedIndex.ToString()}','{DateTime.Now.ToString("yyyy-MM-dd")}')";
-                    MessageBox.Show(SQL, "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    con.ExecuteNonQuery(SQL);
-                    restInputs();
-                }
-                else { MessageBox.Show("Not selected", "Gender not Selected", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
+                
+                    if (!error)
+                    {
+                        String SQL = $"INSERT INTO `user`(`idUser`, `Nom`, `Prenom`, `Phone`, `BirthDate`, `Adresse`, `ZIP`, `Email`, `Password`, `Gender`, `idCity`, `Role`, `uStatus`, `inscritDate`) VALUES (NULL,'{txtLastName.Text}','{txtFirstName.Text}','{txtPhone.Text}','{birthDatePicker.Text}','{txtAddresse.Text}','{txtZip.Text}','{txtEmail.Text}',MD5('{txtPassword.Text}'),'{genderValue}','{citySelectedIndex.ToString()}','{roleSelectedIndex.ToString()}','{statusSelectedIndex.ToString()}','{DateTime.Now.ToString("yyyy-MM-dd")}')";
+                        MessageBox.Show(SQL, "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        con.ExecuteNonQuery(SQL);
+                        restInputs();
+                    }
+                    
             }
             else
             {
                 //MessageBox.Show("Edit");
-                String SQL = $"UPDATE `user` SET `Nom`='{txtLastName.Text}',`Prenom`='{txtFirstName.Text}',`Phone`='{txtPhone.Text}',`BirthDate`='{birthDatePicker.Text}',`Adresse`='{txtAddresse.Text}',`ZIP`='{txtZip.Text}',`Email`='{txtEmail.Text}',`Password`='{txtPassword.Text}',`Gender`='{genderValue}',`idCity`='{citySelectedIndex.ToString()}',`Role`='{roleSelectedIndex.ToString()}',`uStatus`='{statusSelectedIndex.ToString()}' WHERE `idUser`= '{IdUser.Text}'";
+                String SQL = $"UPDATE `user` SET `Nom`='{txtLastName.Text}',`Prenom`='{txtFirstName.Text}',`Phone`='{txtPhone.Text}',`BirthDate`='{birthDatePicker.Text}',`Adresse`='{txtAddresse.Text}',`ZIP`='{txtZip.Text}',`Email`='{txtEmail.Text}',`Gender`='{genderValue}',`idCity`='{citySelectedIndex.ToString()}',`Role`='{roleSelectedIndex.ToString()}',`uStatus`='{statusSelectedIndex.ToString()}' ";
+                if (string.IsNullOrEmpty(txtPassword.Text)) {
+                    SQL += $"WHERE `idUser`= '{IdUser.Text}'";
+                }
+                else
+                {
+                    SQL += $",`Password`=MD5('{txtPassword.Text}')";
+                    SQL += $"WHERE `idUser`= '{IdUser.Text}'";
+
+                }
                 MessageBox.Show(SQL);
                 con.ExecuteNonQuery(SQL);
                 restInputs();

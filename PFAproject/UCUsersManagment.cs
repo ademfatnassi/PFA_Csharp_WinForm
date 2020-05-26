@@ -61,7 +61,7 @@ namespace PFAproject
             userEditInputs.txtAddresse.Text = usersList.CurrentRow.Cells[5].Value.ToString();
             userEditInputs.txtZip.Text =  usersList.CurrentRow.Cells[6].Value.ToString();
             userEditInputs.txtEmail.Text = usersList.CurrentRow.Cells[7].Value.ToString();
-            userEditInputs.txtPassword.Text = usersList.CurrentRow.Cells[8].Value.ToString();
+            //userEditInputs.txtPassword.Text = usersList.CurrentRow.Cells[8].Value.ToString();
             if (usersList.CurrentRow.Cells[9].Value.ToString().Equals("M"))
             { userEditInputs.male.Checked = true; }
             else if (usersList.CurrentRow.Cells[9].Value.ToString().Equals("F"))

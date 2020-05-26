@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.loginPagePanel = new System.Windows.Forms.Panel();
+            this.minimize = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.close = new System.Windows.Forms.Label();
             this.sideLogoPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.minimize = new System.Windows.Forms.Label();
             this.loginPagePanel.SuspendLayout();
             this.sideLogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,6 +63,18 @@
             this.loginPagePanel.Size = new System.Drawing.Size(600, 450);
             this.loginPagePanel.TabIndex = 1;
             this.loginPagePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // minimize
+            // 
+            this.minimize.AutoSize = true;
+            this.minimize.Font = new System.Drawing.Font("Montserrat Light", 20.25F);
+            this.minimize.ForeColor = System.Drawing.Color.Black;
+            this.minimize.Location = new System.Drawing.Point(529, 9);
+            this.minimize.Name = "minimize";
+            this.minimize.Size = new System.Drawing.Size(31, 37);
+            this.minimize.TabIndex = 21;
+            this.minimize.Text = "_";
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
             // 
             // btnLogin
             // 
@@ -92,6 +104,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(151, 279);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '⬤';
             this.txtPassword.Size = new System.Drawing.Size(308, 27);
             this.txtPassword.TabIndex = 4;
             // 
@@ -169,18 +182,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(161, 173);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // minimize
-            // 
-            this.minimize.AutoSize = true;
-            this.minimize.Font = new System.Drawing.Font("Montserrat Light", 20.25F);
-            this.minimize.ForeColor = System.Drawing.Color.Black;
-            this.minimize.Location = new System.Drawing.Point(529, 9);
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(31, 37);
-            this.minimize.TabIndex = 21;
-            this.minimize.Text = "_";
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
             // 
             // LoginForm
             // 

@@ -28,8 +28,8 @@ namespace PFAproject
        );
         /*END OF CODE BLOCK*/
 
-        //Connection con = new Connection();
-        //string idUser, email, password, firstname, lastname, address;
+        Connection con = new Connection();
+        string idUser, email, password, firstname, lastname, address;
 
         public LoginForm()
         {
@@ -55,52 +55,51 @@ namespace PFAproject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (txtEmail.Text != "" && txtPassword.Text != "")
-            //    {
+            try
+            {
+                if (txtEmail.Text != "" && txtPassword.Text != "")
+                {
 
-            //        con.Open();
-            //        string query = "select * from user WHERE Email ='" + txtEmail.Text + "' AND Password ='" + txtPassword.Text + "'";
-            //        MySqlDataReader row;
-            //        row = con.ExecuteReader(query);
-            //        if (row.HasRows)
-            //        {
-            //            while (row.Read())
-            //            {
-            //                idUser = row["idUser"].ToString();
-            //                email = row["Email"].ToString();
-            //                password = row["Password"].ToString();
-            //                firstname = row["Prenom"].ToString();
-            //                lastname = row["Nom"].ToString();
-            //                address = row["Adresse"].ToString();
-            //            }
-            //            MessageBox.Show("Data found your name is " + firstname + " " + lastname + " " + " and your address at " + address);
-            //            this.Hide();
-            //            AdminDashboard adminDashboard = new AdminDashboard();
-            //            adminDashboard.ShowDialog();
+                    con.Open();
+                    string query = "select * from user WHERE `Role`=1 and `uStatus`=1 and Email ='" + txtEmail.Text + "' AND Password =MD5('" + txtPassword.Text + "')";
+                    MySqlDataReader row;
+                    row = con.ExecuteReader(query);
+                    if (row.HasRows)
+                    {
+                        while (row.Read())
+                        {
+                            idUser = row["idUser"].ToString();
+                            email = row["Email"].ToString();
+                            password = row["Password"].ToString();
+                            firstname = row["Prenom"].ToString();
+                            lastname = row["Nom"].ToString();
+                            address = row["Adresse"].ToString();
+                        }
+                        this.Hide();
+                        AdminDashboard admin = new AdminDashboard();
+                        admin.ShowDialog();
 
-            //            this.Close();
+                        this.Close();
 
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Data not found", "Information");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Username or Password is empty", "Information");
-            //    }
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Connection Error", "Information");
-            //}
-            this.Hide();
-            AdminDashboard adminDashboard = new AdminDashboard();
-            adminDashboard.ShowDialog();
-            this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data not found", "Information");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username or Password is empty", "Information");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Connection Error", "Information");
+            }
+            //this.Hide();
+            //AdminDashboard adminDashboard = new AdminDashboard();
+            //adminDashboard.ShowDialog();
+            //this.Close();
         }
 
         private void label4_Click(object sender, EventArgs e)
