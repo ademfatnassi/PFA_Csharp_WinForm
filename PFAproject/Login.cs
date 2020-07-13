@@ -89,7 +89,7 @@ namespace PFAproject
                 }
                 else
                 {
-                    MessageBox.Show("Username or Password is empty", "Information");
+                    MessageBox.Show("Email or Password is empty", "Information");
                 }
             }
             catch
